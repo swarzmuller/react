@@ -1,0 +1,75 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.results-footer {
+    max-width: 525px;
+    margin: 25px auto 0;
+    text-align: center;
+    @include font(20px, 28px, $subtitleColor);
+}
+.text-res{
+    margin-bottom: 33px;
+    @include r(1170){
+        margin-bottom: 10px;
+        line-height: 25px;
+    }
+}
+.result-content {
+    margin-top: 40px;
+    padding: 45px 57px 5px;
+    border-top: 1px solid #b4d5d7;
+    border-bottom: 1px solid #b4d5d7;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @include font(18px, 32px, $subtitleColor);
+
+    @include r(1023) {
+        padding: 35px 40px 20px;
+        @include font(17px, 25px, $subtitleColor);
+    }
+
+    @include r(767) {
+        padding: 10px;
+        @include font(16px, 22px, $subtitleColor);
+    }
+}
+.result-content-item{
+    max-width: 500px;
+    width: 100%;
+    margin: 0 10px;
+    @include r(1170) {
+        max-width: 100%;
+    }
+}
+.result-content-accent {
+    color: $darkTextColor;
+    font-weight: 700;
+}
+
+.res-btnblock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 37px;
+    margin-bottom: -42px;
+}
+.linka{
+    color: #009fdb;
+    display: inline-block;
+}
+.prod-link{
+    text-align: center;
+    font-size: 20px;
+    margin: 46px 0 0;
+    color: #555555;
+    .linka{
+        text-decoration: underline;
+    }
+}
+
+.intro__main_end{
+    padding-bottom: 10px;
+}

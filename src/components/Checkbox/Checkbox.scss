@@ -1,0 +1,100 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.checkbox {
+    width: 49%;
+
+    &:nth-child(n+3) {
+        margin-top: 20px;
+    }
+
+    &:nth-child(n+2) {
+
+        @include r(850) {
+            margin-top: 15px;
+        }
+    }
+
+    @include r(850) {
+        width: 80%;
+    }
+
+    @include r(639) {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+.checkbox__container {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding-left: 27px;
+    background-color: $checkboxColor;
+    border-radius: 34px;
+    cursor: pointer;
+}
+
+.checkbox__input {
+    display: none;
+
+    &:checked {
+
+        &+.checkbox__container {
+            background: linear-gradient(to right, $amountStartColor 0%, $amountEndColor 80%, $amountEndColor 100%);
+
+            .checkbox__content {
+                color: $brightColor;
+            }
+
+            .checkbox__img {
+
+                svg {
+                    fill: $brightColor;
+                }
+            }
+        }
+
+
+    }
+}
+
+.checkbox__content {
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 0;
+    @include font(18px, 22px, $headerTextColor);
+
+    @include r(1023) {
+        @include font(17px, 20px, $headerTextColor);
+    }
+
+    @include r(639) {
+        @include font(15px, 17px, $headerTextColor);
+    }
+}
+
+.checkbox__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 13.47%;
+    border-left: 1px solid $checkboxBorderColor;
+
+    @include r(1023) {
+        width: 15%;
+    }
+
+    @include r(639) {
+        width: 20%;
+    }
+}
+
+.checkbox__img svg {
+    fill: #c3cbce;
+
+    @include r(1023) {
+        width: 24px;
+    }
+}

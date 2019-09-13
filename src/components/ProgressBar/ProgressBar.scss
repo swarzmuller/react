@@ -1,0 +1,129 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+@keyframes lineWidth {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.progress-bar {
+    position: relative;
+    margin-bottom: 35px;
+    padding: 53px 70px 39px;
+    background-color: $progressBarWrapperColor;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid $progressBarWrapperBorder;
+
+    @include r(850) {
+        padding: 45px 50px 25px;
+    }
+
+    @include r(639) {
+        padding: 45px 20px 25px;
+    }
+}
+
+.progress-bar__circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(to right, #5cbce0 0%, #019fdb 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgba($circleInner, .15), 0 0 0 20px rgba($circleOuter, .15);
+    transform: translate(-50%, -50%);
+
+    @include r(767) {
+        width: 60px;
+        height: 60px;
+        box-shadow: 0 0 0 7px rgba($circleInner, .15), 0 0 0 14px rgba($circleOuter, .15);
+    }
+}
+
+.progress-bar__circle-img {
+    max-width: 44px;
+}
+
+.progress-bar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @include r(767) {
+        margin-bottom: 10px;
+    }
+}
+
+.progress-bar__title {
+    @include font(18px, 20px, $darkTextColor);
+
+    @include r(767) {
+        @include font(16px, 18px, $darkTextColor);
+    }
+
+    @include r(639) {
+        @include font(15px, 16px, $darkTextColor);
+    }
+}
+
+.page-counter {
+    @include font(18px, 20px, $pageCounterColor);
+
+    @include r(767) {
+        @include font(16px, 18px, $pageCounterColor);
+    }
+
+    @include r(639) {
+        @include font(15px, 16px, $pageCounterColor);
+    }
+}
+
+.page-counter__current {
+    color: $darkTextColor;
+}
+
+.progress-bar__line {
+    width: 100%;
+    height: 16px;
+    background-color: #eef6f9;
+    background-image: repeating-linear-gradient(-75deg, transparent, transparent 2px, #e0eff5 2px, #e0eff5 10px);
+    border-radius: 8px;
+    box-shadow: inset 0 0 1px 0 rgba($darkTextColor, .1);
+
+    @include r(767) {
+        height: 12px;
+    }
+}
+
+.progress-bar__line-full_first-step {
+    width: 10%;
+}
+
+.progress-bar__line-full {
+    height: 100%;
+    background-color: $progressBarColor;
+    border-radius: 8px;
+}
+
+.progress-bar__line-full_animate {
+    animation: lineWidth 8s linear;
+}
+
+.progress-bar__percent {
+    @include font(18px, 22px, $darkTextColor);
+}
+
+.progress-bar__line-full_end {
+    width: 100%;
+}

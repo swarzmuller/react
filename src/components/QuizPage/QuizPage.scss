@@ -1,0 +1,25 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.intro__main_quiz {
+    margin-bottom: 70px;
+}
+
+.intro__main_result {
+    padding: 0 0 70px;
+}
+
+.intro__main_end {
+    margin-bottom: 0;
+}
+
+.footnote {
+    max-width: 810px;
+    margin: 0 auto;
+    text-align: center;
+    @include font(16px, 22px, $footnoteColor);
+
+    @include r(767) {
+        @include font(15px, 20px, $footnoteColor);
+    }
+}

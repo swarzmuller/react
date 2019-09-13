@@ -1,0 +1,220 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.intro__main {
+    position: relative;
+    margin-bottom: 103px;
+    padding: 0 0 95px;
+    background-color: $brightColor;
+    border-radius: 5px;
+
+    @include r(767) {
+        margin-bottom: 80px;
+        padding: 0 0 75px;
+    }
+
+    @include r(639) {
+        margin-bottom: 70px;
+        padding: 0 0 65px;
+    }
+
+    @include r(479) {
+        margin-bottom: 60px;
+        padding: 0 0 50px;
+    }
+}
+
+.intro__explanation {
+    margin-bottom: 25px;
+    text-align: center;
+    @include font(25px, 30px, $questionTitleColor);
+
+    @include r(1023) {
+        @include font(22px, 26px, $questionTitleColor);
+        margin-bottom: 20px;
+    }
+
+    @include r(850) {
+        @include font(20px, 24px, $questionTitleColor);
+        margin-bottom: 15px;
+    }
+
+    @include r(767) {
+        @include font(18px, 22px, $questionTitleColor);
+        margin-bottom: 10px;
+    }
+
+    @include r(639) {
+        padding: 0 5px;
+        @include font(17px, 2й0px, $questionTitleColor);
+    }
+}
+
+.intro__title {
+    width: 100%;
+    max-width: 670px;
+    margin: 0 auto 15px;
+    padding: 30px 20px 0;
+    text-align: center;
+    @include font(45px, 45px, $darkTextColor);
+    font-weight: 900;
+
+    @include r(1023) {
+        @include font(40px, 40px, $darkTextColor);
+    }
+
+    @include r(767) {
+        padding: 20px 15px 0;
+        @include font(35px, 35px, $darkTextColor);
+    }
+
+    @include r(479) {
+        margin: 0 auto 8px;
+        padding: 15px 10px 0;
+        @include font(28px, 30px, $darkTextColor);
+    }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .intro__title {
+        max-width: 800px;
+        width: 100%;
+    }
+
+}
+input::-ms-clear{
+    display: none;
+}
+.intro__subtitle {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    @include font(20px, 28px, $subtitleColor);
+
+    @include r(1023) {
+        @include font(18px, 26px, $subtitleColor);
+    }
+
+    @include r(767) {
+        padding: 0 10px;
+        @include font(16px, 22px, $subtitleColor);
+    }
+
+    @include r(479) {
+        @include font(15px, 20px, $subtitleColor);
+    }
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding: 0 100px;
+
+    @include r(850) {
+        justify-content: center;
+        margin-top: 20px;
+        padding: 0 60px;
+    }
+
+    @include r(479) {
+        padding: 0 20px;
+    }
+}
+
+.intro__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    @include r(639) {
+        flex-wrap: wrap;
+    }
+}
+.dib{
+    display: inline-block;
+}
+.noValid{
+    position: relative;
+}
+.input{
+    margin-bottom: 20px;
+    position: relative;
+}
+.noValid .input__control{
+    box-shadow: 0 0 4px 0 #d80000;
+    transition: 0.3s;
+
+}
+.input:after{
+    content: 'Введите корректное значение';
+    position: absolute;
+    display: block;
+    bottom: -17px;
+    transition: .3s;
+    left: 18px;
+    font-size: 13px;
+    color: red;
+    opacity: 0;
+}
+.input.noValid:after{
+    opacity: 1;
+}
+.intro__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 303px;
+    padding: 0 5px;
+
+    @include r(639) {
+        max-width: 280px;
+    }
+}
+
+.intro__item-number {
+    margin-bottom: 10px;
+    @include font(75px, 75px, $progressBarColor);
+    font-weight: 900;
+
+    @include r(1023) {
+        @include font(70px, 70px, $progressBarColor);
+    }
+
+    @include r(767) {
+        @include font(60px, 60px, $progressBarColor);
+    }
+
+    @include r(639) {
+        margin-bottom: 5px;
+        @include font(50px, 50px, $progressBarColor);
+    }
+}
+
+.intro__item-desc {
+    text-align: center;
+    @include font(19px, 25px, $subtitleColor);
+
+    @include r(1023) {
+        @include font(17px, 23px, $subtitleColor);
+    }
+
+    @include r(767) {
+        @include font(16px, 22px, $subtitleColor);
+    }
+
+    @include r(639) {
+        margin-bottom: 5px;
+        @include font(15px, 21px, $subtitleColor);
+    }
+}
+
+.intro__btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+}

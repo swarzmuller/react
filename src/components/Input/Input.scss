@@ -1,0 +1,71 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.input {
+    display: block;
+    width: 49%;
+
+    &:nth-child(n+3) {
+        margin-top: 20px;
+    }
+
+    &:nth-child(n+2) {
+        @include r(850) {
+            margin-top: 15px;
+        }
+
+        @include r(639) {
+            margin-top: 10px;
+        }
+    }
+
+    @include r(850) {
+        width: 80%;
+    }
+
+    @include r(639) {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+.input__control {
+    display: block;
+    width: 100%;
+    padding: 14px 27px 14px 60px;
+    @include font(18px, 24px, $headerTextColor);
+    @include placeholder($size: 18px, $height: 18px, $style: normal, $color: #ccc);
+    border: 1px solid $progressBarWrapperBorder;
+    border-radius: 30px;
+    outline: none;
+    cursor: text;
+    background-repeat: no-repeat;
+    background-position: 20px 50%;
+}
+
+.input__control_height {
+    background-image: url('/images/height-icon.svg');
+
+    &:focus {
+        border-color: $inputBrightColor;
+        background-image: url('/images/height-icon-focus.svg');
+    }
+}
+
+.input__control_weight {
+    background-image: url('/images/weight-icon.svg');
+
+    &:focus {
+        border-color: $inputBrightColor;
+        background-image: url('/images/weight-icon-focus.svg');
+    }
+}
+
+.input__control_age {
+    background-image: url('/images/age-icon.svg');
+
+    &:focus {
+        border-color: $inputBrightColor;
+        background-image: url('/images/age-icon-focus.svg');
+    }
+}

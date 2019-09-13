@@ -1,0 +1,19 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.result-calculation {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 30px;
+    //padding: 0 100px;
+
+    @include r(1170) {
+        padding: 0 30px;
+    }
+
+    @include r(550) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}

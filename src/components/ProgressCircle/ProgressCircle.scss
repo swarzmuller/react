@@ -1,0 +1,148 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+@keyframes progress {
+    from {
+        stroke-dashoffset: 376.991;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.progress-circle-wrap {
+    display: flex;
+    align-items: center;
+    max-width: 288px;
+    position: relative;
+    &:nth-child(n+2) {
+
+        @include r(399) {
+            margin-top: 26px;
+        }
+    }
+    &:after{
+        content: '';
+        background: #b4d5d7;
+        width: 1px;
+        height: 94px;
+        display: block;
+        position: absolute;
+        right: -62px;
+        top: 27px;
+        @include r(1170) {
+            display: none;
+        }
+    }
+    &:last-child{
+        &:after{
+            display: none;
+        }
+    }
+    @include r(910) {
+        flex-direction: column;
+    }
+
+    @include r(550) {
+        width: 160px;
+    }
+}
+
+.progress-circle__percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include font(35px, 35px, $darkTextColor);
+    font-weight: 900;
+
+    @include r(1023) {
+        @include font(30px, 30px, $darkTextColor);
+    }
+}
+
+.progress-circle__svg {
+    transform: rotate(-90deg);
+
+    @include r(1023) {
+        height: 110px;
+        width: 110px;
+    }
+
+    @include r(910) {
+        height: 130px;
+        width: 130px;
+    }
+}
+
+#svg circle {
+    stroke-dashoffset: 100px;
+    transition: stroke-dashoffset 1s linear;
+    stroke-width: 1em;
+}
+
+.progress-circle__circle_anthro {
+    animation: progress 2s linear 1 forwards;
+}
+
+.progress-circle__circle_nutrition {
+    animation: progress 2s linear 1 forwards;
+    animation-delay: 2s;
+}
+
+.progress-circle__circle_total {
+    animation: progress 4s linear 1 forwards;
+    animation-delay: 4s;
+}
+
+.progress-circle__circle_full {
+    stroke-dashoffset: 0;
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    .progress-circle__circle {
+        stroke-dashoffset: 0;
+    }
+}
+
+#cont {
+    display: block;
+    height: 140px;
+    width: 140px;
+    border-radius: 100%;
+    position: relative;
+    flex-shrink: 0;
+
+    @include r(1023) {
+        height: 110px;
+        width: 110px;
+    }
+
+    @include r(910) {
+        margin-bottom: 10px;
+        height: 130px;
+        width: 130px;
+    }
+}
+
+.progress-circle__desc {
+    //max-width: 140px;
+    margin-left: 15px;
+    @include font(17px, 22px, $headerTextColor);
+
+    @include r(1170) {
+        margin-left: 10px;
+        @include font(16px, 22px, $headerTextColor);
+    }
+
+    @include r(910) {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    @include r(550) {
+        @include font(15px, 20px, $headerTextColor);
+    }
+}

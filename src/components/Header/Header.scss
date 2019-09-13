@@ -1,0 +1,25 @@
+@import "../../styles/vars.scss";
+@import "../../styles/mixins.scss";
+
+.header {
+    margin-bottom: 80px;
+    padding-top: 15px;
+
+    @include r(767) {
+        margin-bottom: 50px;
+    }
+
+    @include r(639) {
+        margin-bottom: 30px;
+    }
+}
+
+.header__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include r(545) {
+        flex-wrap: wrap;
+    }
+}
