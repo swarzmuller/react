@@ -10,7 +10,7 @@
     "react-app-polyfill": "^1.0.2",
     "react-countup": "^4.2.2",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1",
+    "react-scripts": "5.0.1",
     "react-useinterval": "^1.0.1"
   },
   "scripts": {
